@@ -1,0 +1,14 @@
+\section{Hedera Hashgraph Summary}
+
+Hedera Hashgraph uses a gossip protocol to efficiently transmit events with the concept of virtual voting. It has proven that it can reach consensus without having to send out votes across the network by using a local node's internal representation of the Hashgraph. This results in a high throughput, asynchonous Byzantine Fault Tolerant, and fairly ordered system.
+
+% https://www.academia.edu/27660079/The_Byzantine_Generals_Problem_pdf
+The Byzantine Generals Theorem <CITE> states that we cannot reliably reach consensus if more than 1/3 of participants are malicious. It is asynchonous in a way that attackers can put up firewalls, DDoS members, and messages get lost or altered.
+
+In a proof of stake system used by Hashgraph, it's security relies on no more than 1/3 of the coins are owned by malicious actors. As demand for the coins rise, it will be harder to corner a market because price will increase with a limited supply.
+
+Compare this with a proof-of-work system used by Bitcoin where it assigns a leader to append blocks to the chain with the process of mining. A proof-of-stake is more environmentally friendly as no mining is done, 1 coin = 1 vote. It can also be argued to be fairer because it does not favour entities with economies of scale.
+
+To prove how it works, let us define what strongly seeing an event means.
+
+The Strongly Seeing Theorem <CITE> is the key pillar of how hashgraph works. The proof is by contradiction. Suppose Mallory wants to cheat the system by forking an event. (This is a condensed summary of the proof, see the whitepaper for the full proof) Alice's local hashgraph reads 2n/3 x strongly sees w and another 2n/3 strongly sees y, then the intersection must be >1/3. The assumption is no more than 1/3 is dishonest so there must be an honest member in between. However, that honest member cannot strongly see both events because x and y are fork and breaks the definition of strongly seeing. This is a contradiction therefore the assumption that x strongly sees w is false. Mallory will not be able to cheat if no more than 1/3 of the nodes are malicious.
