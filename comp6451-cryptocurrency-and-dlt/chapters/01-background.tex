@@ -1,0 +1,11 @@
+\section{Background}
+
+The rise of Bitoin as the first viable decentralised digital currency paved the way for a number of rising cryptocurrencies. While these early generation DLTs have proven to be popular, scaling them have been a challenge. 
+
+% When a proof-of-work is used to achieve consensus, the rate of which blocks can be added were intentionally made slow so that a leader can decide consensus.
+
+Gossip protocols can efficiently broadcast information with high reliability and throughput \cite{birman}. Achieving consensus however is a separate problem that were historically solved by sending expensive votes across the network.
+
+Hedera Hashgraph uses a gossip protocol to efficiently transmit events with the concept of virtual voting. It has proven that it can reach consensus without having to send out votes across the network by using a local node's internal representation of the Hashgraph. This results in a high throughput, asynchonous Byzantine Fault Tolerant, and fairly ordered system.
+
+% This however is an expensive operation that grows exponentially with the number of nodes.
