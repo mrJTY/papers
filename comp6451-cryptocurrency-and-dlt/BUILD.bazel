@@ -1,12 +1,13 @@
 load("@bazel_latex//:latex.bzl", "latex_document")
 
-BIB_LATEX = [
-    "@bazel_latex//packages:biblatex"
+LATEX_PACKAGES = [
+    "@bazel_latex//packages:biblatex",
+    "@bazel_latex//packages:tikz",
 ]
 
 latex_document(
     name = "research",
-    srcs = glob(["**/*.tex"]) + glob(["*.bib"]) + BIB_LATEX,
+    srcs = glob(["**/*.tex"]) + glob(["*.bib"]) + LATEX_PACKAGES,
     main = "hashgraph-research-assignment.tex",
     cmd_flags = ["--bibtex-cmd=biber"]
 )
