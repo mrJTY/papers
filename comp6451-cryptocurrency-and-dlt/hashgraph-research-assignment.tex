@@ -1,6 +1,12 @@
 \documentclass{article}
 
 \usepackage[backend=biber]{biblatex}
+\usepackage{tikz}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{patterns}
+
 \addbibresource{comp6451-cryptocurrency-and-dlt/references.bib}
 
 %%%%%%%%%%%%%%
@@ -9,15 +15,19 @@
 
 \author{Justin Ty}
 \title{Hedera Hashgraph - A Survey Review in April 2021 }
-\date{\today}
+\date{April 2021 (Work in progress)}
 
 \maketitle
 
-\input{comp6451-cryptocurrency-and-dlt/chapters/introduction.tex}
-\input{comp6451-cryptocurrency-and-dlt/chapters/background.tex}
-\input{comp6451-cryptocurrency-and-dlt/chapters/how-it-works.tex}
-\cite{einstein}
+\input{comp6451-cryptocurrency-and-dlt/chapters/00-abstract.tex}
+\input{comp6451-cryptocurrency-and-dlt/chapters/01-background.tex}
+\input{comp6451-cryptocurrency-and-dlt/chapters/02-description.tex}
+\input{comp6451-cryptocurrency-and-dlt/chapters/03-analysis.tex}
+% conclusion
+
+%%%%%%%%%%%%%%
 \printbibliography
+%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%
 \end{document}
