@@ -3,11 +3,12 @@
 % insert figure
 \input{comp6451-cryptocurrency-and-dlt/figures/hashgraph.tex}
 
-Hashgraph uses standard cryptographic hashes and digital signatures to securely spread events across the network. It was mathematically proven that each member will eventually have a consistent local hashgraph to run virtual voting without sending votes across the network \cite{baird2016}.
+Hashgraph uses standard cryptographic hashes and digital signatures to securely spread events across the network (Figure \ref{fig:hashgraph}). It was mathematically proven that each member will eventually have a consistent local hashgraph to run virtual voting without sending votes across the network \cite{baird2016}.
 
 To achieve consensus, first consider the Byzantine Generals Problem \cite{shostak1982byzantine}, the tale of three generals that need consensus whether to attack or not. Consensus cannot be reached if 1/3 or more are malicious. Asynchonous adds another layer of complexity where messages may get lost or altered, similar to the real internet with firewalls and DDoS attacks.
 
-Hashgraph was proven to be aBFT with its key pillar of the Strongly Seeing Lemma \cite{baird2016}. Suppose Mallory can cheat by forking an event on her own graph. She could double spend her coins by gossiping two different events (x \& y) to different members of the network. The Strongly Seeing Lemma states that the forked event will not be strongly seen by other members. A proof by contradiction shows that if 2/3 strongly sees x and 2/3 also strongly sees y, then this is impossible if only less than 1/3 are malicious.
+\input{comp6451-cryptocurrency-and-dlt/figures/cheating.tex}
+Hashgraph was proven to be aBFT with its key pillar of the Strongly Seeing Lemma \cite{baird2016}. A full mathematical proof is beyond the scope of this paper, but a simple illustration can be found in Figure \ref{fig:cheating}.
 
 In a proof-of-stake system used by Hashgraph, it's security relies on no more than 1/3 of the coins are owned by malicious actors. As demand for the coins rise, it will be harder to corner a market because price will increase with a limited supply.
 % To prove how it works, let us define what strongly seeing an event means.
