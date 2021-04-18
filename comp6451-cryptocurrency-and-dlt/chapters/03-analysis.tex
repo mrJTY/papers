@@ -1,18 +1,39 @@
 \section{Current state and analysis}
 
+\subsection{Governance and path to decentralisation}
 % Governance
-Originally a paper wirtten under Swirlds, ownership of Hasgraph was transferred to Hedera. It is now goverened by a decentralised council of term-limited multinational companies.
+Originally under Swirlds, ownership of Hashgraph was transferred to the Hedera Governing Council. It is a decentralised council of term-limited multinational companies \cite{baird2018hedera}. 
+
+A criticism of Hashgraph is that the network must agree on N, the total number of participants \cite{kauflin2018}. As of early 2021, Hedera is currently on a permissioned system which makes N known. It is still on a path towards decentralisation while ensuring security along the way.
+% https://hedera.com/learning/what-is-hedera-hashgraph
+
+\subsection{Security and tokenomics}
+% Analysis on security
+To be fully decentralised, Hashgraph's proof-of-stake system will rely on no 1/3 of the coins are owned by malicious actors. Compared with the proof-of-work system used by Bitcoin, proof-of-stake is more environmentally friendly as no mining is invovled. It can also be argued to be fairer because it does not favour entities with economies of scale. Hashgraph also has a coin release schedule to prevent whales to hoard the coins early.% \cite{coin-schedule}
+
+\subsection{Performance analysis}
+Blockhain-based systems still benefit from incumbency and familiarity \cite{khariff2018}. Gossip relies on assumptions to be fully robust \cite{alvisi}. Gossip is a well known protocol, but combining it with the concept of virtual voting is novel. As it is a new concept, the algorithm was checked by a Coq system (a formal verification system) which proves that it is aBFT - the highest security possible in a distributed system \cite{coq2018}.
+
+Real world experiments have shown throughputs of 50-000-500,000+ transactions-per-second (depending on the region setup)\cite{baird2018hedera}. It still remains to be battle tested in a permissionless setup, but the current volumes (\url{https://hedera.com/dashboard}) are orders of magnitude to what Bitcoin or Ethereum can offer.
+
+\subsection{Community and ecosystem}
+
+As of early 2021, services offered include: the Hedera Consensus Service, File, Contracts, Crypotcurrency and Tokenization Service. SDKs are available in Java, NodeJS, and Go. It has a small but growing community with frequent communication updates.
 
 % Code
-The code will only be available as open review for release 1.0.
+The code will only be available as open review for release 1.0. There are no plans to open-source it as part of its governance plan. This will prevent forks from happening and Hedera is the only authorised user of the properiatery technology.
 
-% Analysis of the algorithm
-Gossip relies on assumptions to be fully robust \cite{alvisi}.
+\subsection{Use cases}
 
-% Analysis on security
+Blockchain 3.0 <CITE> discusses usecases for a third generation DLT such as election, supply chain management, .
 
-Compare this with a proof-of-work system used by Bitcoin where it assigns a leader to append blocks to the chain with the process of mining. A proof-of-stake is more environmentally friendly as no mining is done, 1 coin = 1 vote. It can also be argued to be fairer because it does not favour entities with economies of scale.
 
-% Usecases
+Everyware is currently using Hashgraph to track the supply chain of the COVID-19 vaccine.
+% cite
+
+% https://www.prnewswire.com/news-releases/everyware-and-hedera-hashgraph-enabling-cold-chain-monitoring-of-covid-19-vaccine-for-nhs-facilities-301209642.html
+
+
+Throughput can enable more usecase that are not yet explored. Early days of the internet.
 % https://www.hedera.com/users/adsdax
 % https://www.hedera.com/users/coupon-bureau/
