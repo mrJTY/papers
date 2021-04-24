@@ -3,18 +3,16 @@
 % insert figure
 \input{comp6451-cryptocurrency-and-dlt/figures/hashgraph.tex}
 
-Hashgraph uses standard cryptographic hashes and digital signatures to securely spread events across a network (Figure 1).%\ref{fig:hashgraph}).
-Each member will eventually have a consistent local copy of a Hashgraph to run virtual voting the need to send votes across the network\cite{baird2016}.
+Hashgraph uses standard cryptographic hashes and digital signatures to securely spread events across a network with the use of a gossip(Figure 1).%\ref{fig:hashgraph}).
+It was mathematically proven that each member will eventually have a consistent local copy of a Hashgraph for each member to run virtual voting without the need to send votes across the network\cite{baird2016}.
 
 \input{comp6451-cryptocurrency-and-dlt/figures/byzantine.tex}
 % \ref{fig:byzantine}
-The Byzantine Generals Problem\cite{shostak1982byzantine} provides the motivation to solve the consensus problem. The theorem illustrated in Figure 2 states that consensus cannot be reached if 1/3 or more are malicious.
-
-To be Byzantine Fault Tolerant means that a distributed system can withstand failure with some unreliable actors. Asynchronous adds another layer of complexity where messages may get delayed or altered, similar to the real internet with firewalls and DDoS attacks. Asynchronous Byzantine Fault Tolerant (aBFT) is the highest level of security a distributed system can achieve\cite{coq2018}.
+The Byzantine Generals Problem\cite{shostak1982byzantine} provides the motivation to solve the consensus problem. The theorem illustrated in Figure 2 states that consensus cannot be reached if 1/3 or more are malicious. To be Byzantine Fault Tolerant means that a distributed system can withstand failure with some unreliable actors. Asynchronous adds another layer of complexity where messages may get delayed or altered, similar to the real internet with firewalls and denial-of-service attacks. Asynchronous Byzantine Fault Tolerant (aBFT) is the highest level of security a distributed system can achieve\cite{coq2018}.
 
 \input{comp6451-cryptocurrency-and-dlt/figures/cheating.tex}
 % \ref{fig:cheating}
-Hashgraph was proven to be aBFT. While a full mathematical proof is beyond the scope of this paper, Figure 3 illustrates it's key pillar of the Strongly Seeing Lemma. In a proof-of-stake system used by Hashgraph, the network's security will rely on 1/3 or more of the coins are not owned by malicious actors. 
+Hashgraph was proven to be aBFT. While a full mathematical proof is beyond the scope of this paper, Figure 3 illustrates it's key pillar of the Strongly Seeing Lemma. Once it has completed it's path towards decentralisation, it's proof-of-stake system will rely on 1/3 or more of the coins are not owned by malicious actors. 
 
 % \input{comp6451-cryptocurrency-and-dlt/figures/venn.tex}
 
