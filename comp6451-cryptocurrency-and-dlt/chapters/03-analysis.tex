@@ -14,13 +14,13 @@ A criticism of Hedera Hashgraph is that the network must agree on N, the total n
 \subsection{Open review, not open source}
 The source code will only be available as open review, not open source. However, anyone can raise a proposal to improve the network by raising a Hedera Improvement Proposal (HIP)\cite{hip}. This governance model will prevent forks similar to what happened to Bitcoin Cash and Ethereum Classic because Hedera is the only authorised body that can use the proprietary Hashgraph technology.
 
+Gossip relies on assumptions to be fully robust \cite{alvisi}. The concept of gossip in a distributed system is well known, but combining it with the concept of virtual voting is novel. As it is a new concept, the algorithm was checked by a Coq system (a formal verification system) which proves that it is aBFT - the highest security possible in a distributed system \cite{coq2018}.
+
 This model can be controversial in the cryptocurrency community which has factions that favour a fully decentralised model. However, one has to look into where mining power has been concentrated in a proof-of-work system, and coin concentration in a proof-of-stake system to fully assess a network's true decentralisation of power.
 
 \subsection{Security, staking and tokenomics}
 % Analysis on security
-Currently on a path towards decentralisation, Hashgraph's proof-of-stake system will rely on no 1/3 or more of the coins are owned by malicious actors. Hedera has outlined a release schedule without compromising the network's security. All coins have already been minted and saved in a treasury which will be released over 15 years\cite{economics2020hedera}. Once all the coins are released, it will be extremely difficult for a single actor to accumulate enough coins to compromise the network, as surges in demand will increase the price of a limited supply coin.
-
-Gossip relies on assumptions to be fully robust \cite{alvisi}. The concept of gossip in a distributed system is well known, but combining it with the concept of virtual voting is novel. As it is a new concept, the algorithm was checked by a Coq system (a formal verification system) which proves that it is aBFT - the highest security possible in a distributed system \cite{coq2018}.
+Currently on a path towards decentralisation, Hashgraph's proof-of-stake system will rely on no 1/3 or more of the coins are owned by malicious actors. Hedera has outlined a release schedule without compromising the network's security. All coins have already been minted and saved in a treasury which will be released over 15 years\cite{economics2020hedera}. It will be extremely difficult for a single actor to accumulate enough coins to compromise the network. The law of supply and demand states that surges in demand with a fixed supply will result in price increases, holding other things constant.
 
 Additionally, Hedera has plans to enable users to proxy stake their coins. This will allow users to stake their coins to well-known nodes which will help secure the network\cite{madsen2019hedera}. There is no slashing involved with this staking mechanism. In return, users will be rewarded with additional coins for participating. This is very different compared to a mining pool, a system purely based on luck. With staking, users are rewarded in proportion to their stake.
 
