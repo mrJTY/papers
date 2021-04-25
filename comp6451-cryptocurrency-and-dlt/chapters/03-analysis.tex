@@ -1,37 +1,37 @@
-\section{Current state and analysis}
+\section{Critical analysis}
 
 \subsection{Governance}
 % Governance
 Originally under Swirlds, Hashgraph's ownership was transferred to the Hedera Governing Council. It is a decentralised council of term-limited multinational companies \cite{baird2018hedera}. 
 
-It's decentralised governance is based on Visa's model\footnote{https://hedera.com/council} which ensures that council does what is best for the network. No single company has complete control and any malicious acts will certainly damage a member's reputation. Well-known companies are in the council which includes Google, Boeing, LG, and Eftpos Australia. It has a seat for 39 council members with only 20 seats filled at the time of writing.
+It's decentralised governance is based on Visa's model\cite{hederacouncil} which ensures that the council does what is best for the network. No single company has complete control and any malicious acts will certainly damage a member's reputation. Well-known companies are in the council which includes Google, Boeing, LG, and Eftpos Australia. It has seats for 39 council members with only 20 seats filled at the time of writing.
 
-A criticism of Hashgraph is that the network must agree on N, the total number of participants \cite{kauflin2018}. As of early 2021, it is currently on a permissioned system which makes N known. Council members currently operate these nodes. It's current permissioned nature has also drawn some skepticism but it has a path towards decentralisation.
+A criticism of Hedera Hashgraph is that the network must agree on N, the total number of participants \cite{kauflin2018}. As of early 2021, it is currently on a permissioned system which makes N known. Council members currently operate these nodes. It's current permissioned nature has also drawn some skepticism but it has a path towards decentralisation.
 
 % It is still on a path towards decentralisation while ensuring security along the way.
 % https://hedera.com/learning/what-is-hedera-hashgraph
 
 \subsection{Open review, not open source}
-The source code will only be available as open review, not open source. However, anyone can raise a proposal to improve the network by raising a Hedera Improvement Proposal (HIP)\footnote{https://github.com/hashgraph/hedera-improvement-proposal}. This governance model will prevent forks similar to what happened to Bitcoin Cash and Ethereum Classic because Hedera is the only authorised body that can use the proprietary Hashgraph technology.
+The source code will only be available as open review, not open source. However, anyone can raise a proposal to improve the network by raising a Hedera Improvement Proposal (HIP)\cite{hip}. This governance model will prevent forks similar to what happened to Bitcoin Cash and Ethereum Classic because Hedera is the only authorised body that can use the proprietary Hashgraph technology.
+
+Gossip relies on assumptions to be fully robust \cite{alvisi}. The concept of gossip in a distributed system is well known, but combining it with the concept of virtual voting is novel. As it is a new concept, the algorithm was checked by a Coq system (a formal verification system) which proves that it is aBFT - the highest security possible in a distributed system \cite{coq2018}.
 
 This model can be controversial in the cryptocurrency community which has factions that favour a fully decentralised model. However, one has to look into where mining power has been concentrated in a proof-of-work system, and coin concentration in a proof-of-stake system to fully assess a network's true decentralisation of power.
 
 \subsection{Security, staking and tokenomics}
 % Analysis on security
-Currently on a path towards decentralisation, Hashgraph's proof-of-stake system will rely on no 1/3 or more of the coins are owned by malicious actors. Hedera has outlined a release schedule without compromising the network's security. All coins have already been minted and saved in a treasury which will be released over 15 years\cite{economics2020hedera}. Once all the coins are released, it will be extremely difficult for a single actor to accumulate enough coins to compromise the network, as surges in demand will increase the price of a limited supply coin.
+Currently on a path towards decentralisation, Hashgraph's proof-of-stake system will rely on no 1/3 or more of the coins are owned by malicious actors. Hedera has outlined a release schedule without compromising the network's security. All coins have already been minted and saved in a treasury which will be released over 15 years\cite{economics2020hedera}. It will be extremely difficult for a single actor to accumulate enough coins to compromise the network. The law of supply and demand states that surges in demand with a fixed supply will result in price increases, holding other things constant.
 
-Additionally, Hedera has plans to enable users to proxy stake their coins. This will allow users to stake their coins to well-known nodes which will help secure the network\cite{madsen2019hedera}. In return, users will be rewarded with additional coins for participating. It is very different as compared to joining a mining pool where it is a system based on luck. With staking, users are rewarded in proportion to their stake.
+Additionally, Hedera has plans to enable users to proxy stake their coins. This will allow users to stake their coins to well-known nodes which will help secure the network\cite{madsen2019hedera}. There is no slashing involved with this staking mechanism. In return, users will be rewarded with additional coins for participating. This is very different compared to a mining pool, a system purely based on luck. With staking, users are rewarded in proportion to their stake.
 
-\subsection{Correctness}
-Gossip relies on assumptions to be fully robust \cite{alvisi}. The concept of gossip in a distributed system is well known, but combining it with the concept of virtual voting is novel. As it is a new concept, the algorithm was checked by a Coq system (a formal verification system) which proves that it is aBFT - the highest security possible in a distributed system \cite{coq2018}.
 
 \subsection{Performance and efficiency}
 
-Depending on the region setup, real world experiments using AWS instances have shown throughputs of 50-000-500,000+ transactions-per-second\cite{baird2018hedera}. It still remains to be battle tested in a permissionless setup, but its current transaction volumes\footnote{https://hedera.com/dashboard} already surpass what Bitcoin and Ethereum can do. It is currently operating on a single shard, but it is possible to scale this even more with the addition of more shards.
+Depending on the region setup, real world experiments using AWS instances have shown throughputs of 50-000-500,000+ transactions-per-second\cite{baird2018hedera}. It still remains to be battle tested in a permissionless setup, but its current transaction volumes\cite{hederadashboard} already surpass what Bitcoin and Ethereum can do. It is currently operating on a single shard, but it is possible to scale this even more with the addition of more shards.
 
-It has recently surpassed 1 billion transactions with the mainnet being only online for only about one and a half years\cite{kunz2021hedera}. For comparison as of 2021, Bitcoin\footnote{https://blockchair.com/bitcoin/charts/total-transaction-count} is still at 700 million transactions while Ethereum\footnote{https://blockchair.com/ethereum/charts/total-transaction-count} just surpassed 1 billion this year.
+Hashgraph has recently surpassed 1 billion transactions with the mainnet being only online for only about one and a half years\cite{kunz2021hedera}. For comparison as of 2021, Bitcoin\cite{btctxn} is still below 700 million transactions while Ethereum\cite{ethtxn} just surpassed 1 billion this year.
 
-Compared with the proof-of-work system used by Bitcoin, proof-of-stake is more environmentally friendly as no mining is involved. It can also be argued to be fairer because it does not favour entities with economies of scale or access to cheap electricity.
+Compared with the proof-of-work system used by Bitcoin, proof-of-stake is more environmentally friendly as no mining is involved. Hashgraph can also be argued that it is more fair than mining because it does not favour entities with economies of scale or access to cheap electricity.
 
 It was estimated that Hashgraph uses 600,000 times less energy per transaction than Ethereum and a 5 million times less than Bitcoin\cite{jiro2021power}. A per transaction analysis has also shown that Hashgraph is almost on par with Visa at 0.000170 kwh and 0.001486 kwh respectively.
 
@@ -43,7 +43,7 @@ It was estimated that Hashgraph uses 600,000 times less energy per transaction t
 
 \subsection{Current services and integrations}
 
-Hedera currently offers the following services\footnote{https://hedera.com/services} which enables the development of distributed applications:
+Hedera currently offers the following services\cite{hederaservices} which enables the development of distributed applications:
 
 \begin{itemize}
     \item Hedera Token Service - enables minting, management and configuration of fungible and non-fungible tokens.
@@ -54,7 +54,7 @@ Hedera currently offers the following services\footnote{https://hedera.com/servi
 
 
 
-Hedera also offers integrations\footnote{https://hedera.com/integrations} for Corda, Hyperledger, and Logstash.
+Hedera also offers integrations\cite{hederaintegrations} for Corda, Hyperledger, and Logstash.
 
 \subsection{Use cases}
 
@@ -64,7 +64,7 @@ In the UK, Everyware is currently using Hashgraph to track the supply chain of t
 
 Eftpos Australia is currently developing the next-generation micropayments technology which may potentially open new ways for Australian businesses and consumers to interact. Use cases are are currently being developed as proof-of-concepts which includes sub-cent payments to unblock online paywalls\cite{eftpos2021}.
 
-Central bank digital currencies\footnote{https://hedera.com/learning/what-is-a-central-bank-digital-currency-cbdc} (CBDC) is another potential use-case. Only a few countries have rolled out their own CBDCs. Although it is speculative which technologies central banks are evaluating, more central banks may follow given the interest and investment in the area. Hashgraph's technical innovation offers scalability while it's governance model offers stability, features central banks may consider critical.
+Central bank digital currencies\cite{hederacdbc} (CBDC) is another potential use-case. Only a few countries have rolled out their own CBDCs. Although it is speculative which technologies central banks are evaluating, more central banks may follow given the interest and investment in the area. Hashgraph's technical innovation offers scalability while it's governance model offers stability, features central banks may consider critical.
 
 
 % https://www.eftposaustralia.com.au/news/eftpos-joins-Hedera-Governing-Council-and-will-run-Aussie-Hedera-network-node
